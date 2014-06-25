@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+
+	<title>Hidden Tower- Reservation</title>
+	<link rel="stylesheet" href="style.css" />
+
+	<style type="text/css">
+	<!--
+	img {border:none;
+	}
+	img.map, map area {outline: none;
+	}
+	.center {text-align: center;
+	}
+	header, footer { display: block; }
+
+	#Regular {display: none;}
+	#Executive {display: none;}
+	#heading {text-align: center;}
+	#areaSelected_regular {
+		background-color: #ffc6c6;
+		font-weight: bold;
+	}
+	#areaSelected_executive {
+		background-color: #ffc6c6;
+		font-weight: bold;
+	}
+	
+	-->
+	</style>
+	<script type="text/javascript">
+	//<![CDATA[
+
+		function toggle(arrayOfObject) {        
+			var listOfObjectNameToShow = new Array();
+			listOfObjectNameToShow.push("Regular","Executive","colregular", "colexecutive");
+			for (i = 0; i < listOfObjectNameToShow.length; i++){		
+				document.getElementById(listOfObjectNameToShow[i]).style.display = "none";
+			}
+			for (j = 0; j < arrayOfObject.length; j++){
+				document.getElementById(arrayOfObject[j]).style.display = "block";
+			}
+			
+		}	
+			
+		function showArea(areaId, myThis){
+			document.getElementById(myThis.getAttribute("class")).style.display = "block";
+			document.getElementById(areaId).innerHTML = "You Selected " + myThis.title;
+		}
+		
+	//]]>
+
+	</script>
+</head>	
+		
+	
+
+
+<body id="wrapper">
+	<div id="top_header"> 
+			<a href="home.html"><img src="img/logo.jpg" width="280" height="200" alt="logo" /></a>
+			<div id="header_ad">
+				<a href="http://www.madd.org/"><img src="img/ad.png" width="315" height="130" alt="D and D ad" /></a>
+			</div>
+		</div>
+	<div id="top_bar">
+		<ul>
+			<li><a href="home.html">HOME</a></li> <!-- Be sure to more (class="active") to the html your working on -->
+			<li><a href="apps.html">MENU</a></li>
+			<li><a href="reservation.html" class="active">RESERVATION</a></li>
+			<li><a href="location.html">LOCATION</a></li>
+			<li><a href="about.html">ABOUT US</a></li>
+			<li><a href="franchise.html">FRANCHISING</a></li>
+		</ul>
+	</div>
+	<hr />
+
+
+	
+
+
+	<div id="heading">
+		
+		<!--TWO input buttons -->
+		<input type="button" id="bt1" onclick="toggle(['Regular']); " value="Regular Dinning" /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+		<input type="button" id="bt2" onclick="toggle(['Executive']); " value="Executive Dinning"  />
+	</div>
+
+	<div id="Regular">	
+		<!--Headline -->
+		<h3 class="center">Select Your Dinning Area</h3>
+		
+		<!--Floor Plan map -->
+		<table>
+			<tr>
+				<td>
+				<img id="regmap" src="img/regular-dining2.jpg" width="400" height="350" alt="Regular Floor Plan"  usemap="#regularseat" />
+				</td>
+		
+		
+				<td id="colregular" style="display: none">
+				<p id="areaSelected_regular"> </p>
+				<form method="post" action="mailto:catdintran@yahoo.com">
+					<fieldset>
+						
+						<p>Please select party size:</p>
+						<select name="howMany" size="3">
+							<option selected="selected">2</option>
+							<option>4</option>
+							<option>6</option>
+							<option>10</option>
+						</select>
+						<p>Would you like a Helicopter Service?</p>
+						<select name="helicopter" size="2">
+							<option selected="selected">Yes</option>
+							<option>No</option>
+						</select>
+						
+						<p><input type="submit" value="Make Reservation" />
+						<input type="reset" value="Reset" /> </p>
+						<p>You Have Our Gratitude</p>
+					</fieldset>
+					</form>
+				</td>
+			</tr>
+			
+			<tr class="center">
+				<th><span style="font-size: xx-large">Social Time</span>
+					<br /><img src="img/regular-seat.gif" width="300" height="210" alt="Regular Seat" />
+					<br />Beautiful City Landscape
+				</th>
+				
+				<th><span style="font-size: xx-large">Innovation Time</span>
+					<br /><img src="img/digital_table.gif" width="300" height="210" alt="Digital Table" />
+					<br />Fully-loaded Digital Bar Table
+				</th>
+			</tr>
+			
+		</table>
+		
+		<map id="regularseat" name="regularseat">
+			<area shape="circle" class="colregular" coords="146,160,40" href="#" onclick=				"showArea('areaSelected_regular',this)" title="Area 1" alt="Area1" 
+				onmouseover="document.getElementById('regmap').src= 'img/round-1.gif';"
+				onmouseout="document.getElementById('regmap').src= 'img/regular-dining2.jpg';"/>
+			
+			<area shape="circle" class="colregular" coords="234,139,41" href="#" onclick="showArea('areaSelected_regular',this)" title="Area 2" alt="Area2" 
+				onmouseover="document.getElementById('regmap').src= 'img/round-2.gif';"
+				onmouseout="document.getElementById('regmap').src= 'img/regular-dining2.jpg';"/>
+			
+			<area shape="circle" class="colregular" coords="201,242,50" href="#" onclick="showArea('areaSelected_regular',this)" title="Area 3" alt="Area3" 
+				onmouseover="document.getElementById('regmap').src= 'img/round-3.gif';"
+				onmouseout="document.getElementById('regmap').src= 'img/regular-dining2.jpg';"/>
+			
+			<area shape="circle" class="colregular" coords="304,214,50" href="#" onclick="showArea('areaSelected_regular',this)" title="Area 4" alt="Area4" 
+				onmouseover="document.getElementById('regmap').src= 'img/round-4.gif';"
+				onmouseout="document.getElementById('regmap').src= 'img/regular-dining2.jpg';"/>
+		</map>
+		
+		
+		
+		
+			
+	</div>
+
+	<div id="Executive">	
+		<h3 class="center">Select Your Dinning Area</h3>
+		
+		<table>
+			<tr>
+				<td>
+				<img id="execmap" src="img/executive_dinning.jpg" width="400" height="350" alt="Regular Floor Plan"  usemap="#executiveseat" />
+				</td>
+		
+		
+				<td id="colexecutive" style="display: none">
+				<p id = "areaSelected_executive"> </p>
+				<form method="post" action="mailto:catdintran@yahoo.com">
+					<fieldset>
+						<br/>
+						<p>Please select party size:</p>
+						<select name="howMany" size="3">
+							<option selected="selected">2</option>
+							<option>4</option>
+							<option>6</option>
+							<option>10</option>
+						</select>
+						<br/>
+						<p>Would you like a Helicopter Service? </p>
+						<select name="helicopter" size="2">
+							<option selected="selected">Yes</option>
+							<option>No</option>
+						</select>
+						<br/>
+						<p><input type="submit" value="Make Reservation" />
+						<input type="reset" value="Reset" /> </p>
+						<p>You Have Our Gratitude</p>
+					</fieldset>
+				</form>
+				</td>
+			</tr>
+		</table>
+		
+		<table class="center">	
+			<tr>
+				<th><span style="font-size: xx-large">Still Productive</span>
+				<br /><img src="img/meeting.jpg" width="300" height="210" alt="Regular Seat" />
+				<br />State of Art meeting facilities 
+				</th>
+				<th><span style="font-size: xx-large">We come pick you up</span>
+				<br /><img src="img/helicopter.jpg" width="300" height="210" alt="Digital Table" />
+				<br />Our fleet includes Helicopters and Rolls Royces
+				</th>
+			</tr>
+			
+		</table>
+		
+		<map id="executiveseat" name="executiveseat">
+			<area shape="poly" coords="60,113,119,55,150,114,125,139" href="#" onclick="showArea('areaSelected_executive',this)" class="colexecutive" title="VIP 1" alt="Area1" 
+				onmouseover="document.getElementById('execmap').src= 'img/vip-1.gif';"
+				onmouseout="document.getElementById('execmap').src= 'img/executive_dinning.jpg';"/>
+				
+			<area shape="poly" coords="50,135,115,160,112,192,46,214" href="#" onclick="showArea('areaSelected_executive',this)" class="colexecutive" title="VIP 2" alt="Area2"
+				onmouseover="document.getElementById('execmap').src= 'img/vip-2.gif';"
+				onmouseout="document.getElementById('execmap').src= 'img/executive_dinning.jpg';"/>
+				
+			<area shape="poly" coords="55,237,115,218,142,248,112,296" href="#" onclick="showArea('areaSelected_executive',this)" class="colexecutive" title="VIP 3" alt="Area3" 
+				onmouseover="document.getElementById('execmap').src= 'img/vip-3.gif';"
+				onmouseout="document.getElementById('execmap').src= 'img/executive_dinning.jpg';"/>
+				
+			<area shape="poly" coords="135,308,164,259,207,263,222,320" href="#" onclick="showArea('areaSelected_executive',this)" class="colexecutive" title="VIP 4" alt="Area4" 
+				onmouseover="document.getElementById('execmap').src= 'img/vip-4.gif';"
+				onmouseout="document.getElementById('execmap').src= 'img/executive_dinning.jpg';"/>
+		</map>
+		
+	</div>
+
+
+
+</body>
+</html>
+
+
+
+
